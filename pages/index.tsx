@@ -1,36 +1,31 @@
+'use strict';
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
-interface dataProps {
+type dataProps = {
   id: number;
-  title: string;  
+  title: string;
   body: string;
 }
 // create a type for data props
-  
+
+
 export default function Post({ data }: { data: dataProps[] }) {
+  const router = useRouter();
   return (
     <div>
       {data.map((res) => {
         return (
-          <div key={res.id}>
+          <Link href={`/post/${res.id}`} key={res.id}>
             <h1>{res.title}</h1>
             <p>{res.body}</p>
-          </div>
+          </Link>
         );
       })}
     </div>
   );
 }
 
-// export async function getServersideProps() {
-//   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-//   const articles = res.json()
-//     // console.log(articles)
-//   return {
-//     props: {
-//       articles,
-//     }
-//   }
-// }
 export async function getServerSideProps() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await res.json();
@@ -43,7 +38,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      data
+      data,
     }, // will be passed to the page component as props
   };
 }
