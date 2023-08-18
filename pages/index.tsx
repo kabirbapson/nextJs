@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
@@ -6,9 +6,8 @@ type dataProps = {
   id: number;
   title: string;
   body: string;
-}
+};
 // create a type for data props
-
 
 export default function Post({ data }: { data: dataProps[] }) {
   const router = useRouter();
@@ -22,7 +21,6 @@ export default function Post({ data }: { data: dataProps[] }) {
           </Link>
         );
       })}
-      
     </div>
   );
 }
