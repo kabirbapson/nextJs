@@ -22,6 +22,7 @@ export default function Post({ data }: { data: dataProps[] }) {
           </Link>
         );
       })}
+      
     </div>
   );
 }
