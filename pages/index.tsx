@@ -26,8 +26,8 @@ export default function Post({ data }: { data: dataProps[] }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const data = await res.json();
+  const result = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const data = await result.json();
 
   if (!data) {
     return {

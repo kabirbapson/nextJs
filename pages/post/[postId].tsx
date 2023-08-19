@@ -4,7 +4,7 @@ import { browser } from "process";
 
 export default function Post({ data, params }) {
   const router = useRouter();
-  console.log(router.query.postId, params);
+  // console.log(router.query.postId, params);
 
   // write for me a code to check if the url const no post id, then redirect to home page 
 
@@ -22,7 +22,7 @@ export default function Post({ data, params }) {
 
 export async function getServerSideProps(context) {
   const postId = context.query.postId;
-  console.log(postId);
+  console.log('jj',context.query);
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${postId}`
   );
@@ -30,6 +30,7 @@ export async function getServerSideProps(context) {
 
   if (!data) {
     return {
+
       notFound: true,
     };
   }
