@@ -22,7 +22,7 @@ export default function Post({ data, params }) {
 
 export async function getServerSideProps(context) {
   const postId = context.query.postId;
-  console.log('jj',context.query);
+  // console.log('jj',context.query);
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${postId}`
   );
