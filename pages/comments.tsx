@@ -3,9 +3,6 @@ import React from "react";
 type CommentProps = {
   id?: number;
   name?: string;
-  email?: string;
-  postId?: number;
-  body?: string;
 };
 export default function Comments() {
   const [comments, setComments] = React.useState<CommentProps[]>([]);
@@ -27,8 +24,15 @@ export default function Comments() {
         "Content-Type": "application/json",
       },
     });
-    const mainResponse = await response.json()
-    console.log({mainResponse});
+    const mainResponse = await response.json();
+  };
+  const handleDelete = async (commentId: number) => {
+    const resp = await fetch(`/api/comments/${commentId}`, {
+      method: "DELETE",
+    });
+    const data = resp.json();
+    console.log(data);
+    getComments();
   };
   return (
     <>
@@ -43,7 +47,19 @@ export default function Comments() {
       </div>
       <button onClick={getComments}>Hit me</button>
       {comments.map((comment) => (
-        <h3 key={comment.id}> {comment.name}</h3>
+        <button
+          style={{
+            backgroundColor: "red",
+            display: "flex",
+            flexDirection: "row",
+          }}
+          onClick={() => handleDelete(comment.id)}
+          key={comment.id}
+        >
+          <h3>
+            {comment.id} - {comment.name}
+          </h3>
+        </button>
       ))}
     </>
   );
