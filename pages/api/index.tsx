@@ -1,5 +1,3 @@
-import React from 'react'
-
-export default function index(req, res) {
+export default function handler(req:any, res:any) {
    res.status(200).json({ name: 'John Doe' })
 }
