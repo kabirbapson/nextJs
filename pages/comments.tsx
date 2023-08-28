@@ -15,6 +15,7 @@ export default function Comments() {
   const handleName: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setName(e.target.value);
   };
+  
   const postComments = async () => {
     const response = await fetch("/api/comments", {
       method: "POST",
