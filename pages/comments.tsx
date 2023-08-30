@@ -31,7 +31,6 @@ export default function Comments() {
       method: "DELETE",
     });
     
-
     const data = resp.json();
     console.log(data);
     getComments();
