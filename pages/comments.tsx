@@ -25,6 +25,7 @@ export default function Comments() {
       },
     });
     
+    
     const mainResponse = await response.json();
   };
   const handleDelete = async (commentId: number) => {
