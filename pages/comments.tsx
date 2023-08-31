@@ -24,8 +24,8 @@ export default function Comments() {
         "Content-Type": "application/json",
       },
     });
-    
-    
+  
+
     const mainResponse = await response.json();
   };
   const handleDelete = async (commentId: number) => {
