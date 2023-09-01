@@ -31,7 +31,6 @@ export default function Comments() {
     const resp = await fetch(`/api/comments/${commentId}`, {
       method: "DELETE",
     });
-    
     const data = resp.json();
     console.log(data);
     getComments();
