@@ -54,7 +54,7 @@ export default function Comments() {
             display: "flex",
             flexDirection: "row",
           }}
-          onClick={() => handleDelete(comment.id)}
+          onClick={() => handleDelete(comment.id as any)}
           key={comment.id}
         >
           <h3>
