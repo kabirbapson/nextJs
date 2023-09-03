@@ -57,7 +57,6 @@ export default function Comments() {
           onClick={() => handleDelete(comment.id as any)}
           key={comment.id}
         >
-          
           <h3>
             {comment.id} - {comment.name}
           </h3>
