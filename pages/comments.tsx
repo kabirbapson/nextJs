@@ -50,6 +50,7 @@ export default function Comments() {
       {comments.map((comment) => (
         <button
           style={{
+
             
             backgroundColor: "red",
             display: "flex",
