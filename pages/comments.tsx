@@ -42,6 +42,7 @@ export default function Comments() {
           className="mb-4"
           type="text"
           value={name}
+          
           onChange={handleName}
         />
         <button onClick={postComments}>Post me</button>
@@ -51,7 +52,7 @@ export default function Comments() {
         <button
           style={{
 
-            
+
             backgroundColor: "red",
             display: "flex",
             flexDirection: "row",
