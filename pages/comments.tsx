@@ -43,7 +43,7 @@ export default function Comments() {
           type="text"
           value={name}
 
-          
+
           onChange={handleName}
         />
         <button onClick={postComments}>Post me</button>
@@ -54,6 +54,7 @@ export default function Comments() {
           style={{
 
 
+            
             backgroundColor: "red",
             display: "flex",
             flexDirection: "row",
