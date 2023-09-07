@@ -36,6 +36,7 @@ export default function Comments() {
     getComments();
   };
   return (
+    
     <>
       <div className="w-full p-2 border rounded mb-2">
         <input
